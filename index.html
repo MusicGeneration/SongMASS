@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="./css/skeleton.css">
 <link rel="stylesheet" href="./css/custom.css">
 <link rel="alternate" href="index.xml" type="application/rss+xml" title="SpeechResearch">
-<title>HiFiSinger: Towards High-Fidelity Neural Singing Voice Synthesis - SpeechResearch</title>
+<title>SongMASS: Automatic Song Writing with Masked Sequence to Sequence Pre-training - SpeechResearch</title>
 </head>
 <body>
 
@@ -28,13 +28,12 @@
 <!-- Reddit Discussions: [Click me](https://www.reddit.com/r/MachineLearning/comments/brzwi5/r_fastspeech_fast_robust_and_controllable_text_to/) -->
 
 <h2 id="abstract">Abstract</h2>
-<p>Singing voice synthesis (SVS) requires high sampling rate (e.g., 48KHz) with large range of frequency to convey expression and emotion. However, since higher sampling rate will cause wider frequency band and longer waveform sequence and challenges for singing modeling, conventional SVS systems usually adopt moderate sampling rate (e.g., 24KHz or 16KHz) that only contains limited frequency band and thus cannot well satisfy human ear.
-In this paper, we develop HiFiSinger, an SVS system towards high sampling rate and high-fidelity singing voice.
-HiFiSinger consists of a FastSpeech based neural acoustic model and Parallel-WaveGAN based neural vocoder to ensure fast training and inference speed while voice quality. To address the challenges of high sampling rate in singing modeling (wider frequency band and longer waveform), we design a multi-scale adversarial training on both acoustic model and vocoder to improve singing modeling.
-Specifically, 1) To handle larger range of frequencies caused by higher sampling rate (e.g., 48KHz vs. 24KHz) and model high-frequency details for high-fidelity singing voices, we propose a novel multi-frequency GAN (SF-GAN) on mel-spectrogram generation, which splits the full 80-dimensional mel-frequency into multiple sub-bands (e.g. low, middle and high frequency bands) and models each sub-band with separate discriminators.
-2) to model longer waveform caused by higher sampling rate, we propose a multi-window GAN (MW-GAN) on waveform generation to model different time resolutions (e.g., short, middle, long windows) with separate discriminators.
-Besides, we also incorporate several systematic designs in HiFiSinger, including 1) adding F0 (pitch) and V/UV (voiced/unvoiced) as acoustic features, 2) analyzing the window/hop size trade off, and 3) increasing the receptive field in vocoder, for high-fidelity voices.
-Experiment results show that HiFiSinger synthesizes singing voices with much higher quality than previous system. More ablation studies verify the effectiveness of each design in HiFiSinger.</p>
+<p>Automatic song writing aims to compose a song (lyric and/or melody) by machine, which is an interesting topic in both academia and industry. 
+   In automatic song writing, lyric-to-melody generation and melody-to-lyric generation are two important tasks, both of which usually suffer from the following challenges: 1) the paired lyric and melody data are limited, which affects the generation quality of the two tasks; 2) Strict alignments are required between lyric and melody, which relies on specific alignment modeling. 
+   In this paper, we propose SongMASS to address the above challenges, which leverages masked sequence to sequence (MASS) pre-training and attention based alignment modeling for lyric-to-melody and melody-to-lyric generation. 
+   Specifically, 1) we extend the original sentence-level MASS pre-training to song level to better capture long contextual information in music, and use a separate encoder and decoder for each modality (lyric or melody);  2) we leverage sentence-level attention mask and token-level attention constraint during training to enhance the alignment between lyric and melody. 
+   During inference, we use a dynamic programming strategy to deliver the alignment between each note in melody and word in lyric.  
+   We pre-train SongMASS on large-scale lyric and melody datasets, and both objective and subjective evaluations demonstrate that SongMASS generates lyric and melody with significantly better quality than the baseline method without pre-training or alignment modeling. </p>
 
 
 
