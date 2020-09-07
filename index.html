@@ -1,1 +1,102 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.66.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="./css/normalize.css">
+<link rel="stylesheet" href="./css/skeleton.css">
+<link rel="stylesheet" href="./css/custom.css">
+<link rel="alternate" href="index.xml" type="application/rss+xml" title="SpeechResearch">
+<title>HiFiSinger: Towards High-Fidelity Neural Singing Voice Synthesis - SpeechResearch</title>
+</head>
+<body>
+
+<div class="container">
+<header role="banner">
+</header>
+<main role="main">
+<article itemscope itemtype="https://schema.org/BlogPosting">
+<h1 class="entry-title" itemprop="headline">HiFiSinger: Towards High-Fidelity Neural Singing Voice Synthesis</h1>
+<section itemprop="entry-text">
+<br>
+
+<!-- <p>ArXiv: <a href="https://arxiv.org/pdf/2008.03687.pdf">arXiv:2008.03687</a></p> -->
+
+<!-- Reddit Discussions: [Click me](https://www.reddit.com/r/MachineLearning/comments/brzwi5/r_fastspeech_fast_robust_and_controllable_text_to/) -->
+
+<h2 id="abstract">Abstract</h2>
+<p>Singing voice synthesis (SVS) requires high sampling rate (e.g., 48KHz) with large range of frequency to convey expression and emotion. However, since higher sampling rate will cause wider frequency band and longer waveform sequence and challenges for singing modeling, conventional SVS systems usually adopt moderate sampling rate (e.g., 24KHz or 16KHz) that only contains limited frequency band and thus cannot well satisfy human ear.
+In this paper, we develop HiFiSinger, an SVS system towards high sampling rate and high-fidelity singing voice.
+HiFiSinger consists of a FastSpeech based neural acoustic model and Parallel-WaveGAN based neural vocoder to ensure fast training and inference speed while voice quality. To address the challenges of high sampling rate in singing modeling (wider frequency band and longer waveform), we design a multi-scale adversarial training on both acoustic model and vocoder to improve singing modeling.
+Specifically, 1) To handle larger range of frequencies caused by higher sampling rate (e.g., 48KHz vs. 24KHz) and model high-frequency details for high-fidelity singing voices, we propose a novel multi-frequency GAN (SF-GAN) on mel-spectrogram generation, which splits the full 80-dimensional mel-frequency into multiple sub-bands (e.g. low, middle and high frequency bands) and models each sub-band with separate discriminators.
+2) to model longer waveform caused by higher sampling rate, we propose a multi-window GAN (MW-GAN) on waveform generation to model different time resolutions (e.g., short, middle, long windows) with separate discriminators.
+Besides, we also incorporate several systematic designs in HiFiSinger, including 1) adding F0 (pitch) and V/UV (voiced/unvoiced) as acoustic features, 2) analyzing the window/hop size trade off, and 3) increasing the receptive field in vocoder, for high-fidelity voices.
+Experiment results show that HiFiSinger synthesizes singing voices with much higher quality than previous system. More ablation studies verify the effectiveness of each design in HiFiSinger.</p>
+
+
+
+</section>
+</article>
+</main>
+
+
+    
+
+</div>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-139981676-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+<script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+         HTML: ["input/TeX","output/HTML-CSS"],
+         TeX: {
+                Macros: {
+                         bm: ["\\boldsymbol{#1}", 1],
+                         argmax: ["\\mathop{\\rm arg\\,max}\\limits"],
+                         argmin: ["\\mathop{\\rm arg\\,min}\\limits"]},
+                extensions: ["AMSmath.js","AMSsymbols.js"],
+                equationNumbers: { autoNumber: "AMS" } },
+         extensions: ["tex2jax.js"],
+         jax: ["input/TeX","output/HTML-CSS"],
+         tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true },
+         "HTML-CSS": { availableFonts: ["TeX"],
+                       linebreaks: { automatic: true } }
+     });
+ </script>
+
+ <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+       tex2jax: {
+         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+       }
+     });
+ </script>
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+ </script>
+
+
+
+
+</body>
+</html>
+
+
