@@ -36,9 +36,103 @@
    We pre-train SongMASS on large-scale lyric and melody datasets, and both objective and subjective evaluations demonstrate that SongMASS generates lyric and melody with significantly better quality than the baseline method without pre-training or alignment modeling. </p>
 
 <h2 id="abstract">Contents</h2>
-<b><a href="#L2M">Attention visualization</a></b><br>
 <b><a href="#L2M">Lyric-to-melody generation</a></b><br>
 <b><a href="#M2L">Melody-to-lyric generation</a></b><br>
+<b><a href="#L2M">Attention visualization</a></b><br>
+
+
+<span id="L2M" name="Lyric-to-melody generation"></span>
+<h2 id="L2M">Lyric-to-melody generation</h2>
+
+<h4>Example 1: </h4>
+<table>
+<thead>
+<tr>
+<td style="text-align: center">Baseline</td>
+<td><img src="./audio/L2M/10_base.png" width="60%" height="10px"></td>
+</tr>
+<tr>
+<td style="text-align: center">SongMASS</td>
+<td><img src="./audio/L2M/10.png" width="60%" height="10px"></td>
+</tr>
+</thead>
+</table>
+
+
+<h4>Example 2: </h4>
+<table>
+<thead>
+<tr>
+<td style="text-align: center">Baseline</td>
+<td><img src="./audio/L2M/88_base.png" width="60%" height="10px"></td>
+</tr>
+<tr>
+<td style="text-align: center">SongMASS</td>
+<td><img src="./audio/L2M/88.png" width="60%" height="10px"></td>
+</tr>
+</thead>
+</table>
+
+
+<h4>Example 3: </h4>
+<table>
+<thead>
+<tr>
+<td style="text-align: center">Baseline</td>
+<td><img src="./audio/L2M/333_base.png" width="60%" height="10px"></td>
+</tr>
+<tr>
+<td style="text-align: center">SongMASS</td>
+<td><img src="./audio/L2M/333.png" width="60%" height="10px"></td>
+</tr>
+</thead>
+</table>
+
+
+<span id="M2L" name="Melody-to-lyric generation"></span>
+<h2 id="M2L">Melody-to-lyric generation</h2>
+   
+<h4>Example 1: </h4>
+<table>
+<thead>
+<tr>
+<td style="text-align: center">Baseline</td>
+<td><img src="./audio/M2L/240_base.png" width="60%" height="10px"></td>
+</tr>
+<tr>
+<td style="text-align: center">SongMASS</td>
+<td><img src="./audio/M2L/240.png" width="60%" height="10px"></td>
+</tr>
+</thead>
+</table>
+
+<h4>Example 2: </h4>
+<table>
+<thead>
+<tr>
+<td style="text-align: center">Baseline</td>
+<td><img src="./audio/M2L/385_base.png" width="60%" height="10px"></td>
+</tr>
+<tr>
+<td style="text-align: center">SongMASS</td>
+<td><img src="./audio/M2L/385.png" width="60%" height="10px"></td>
+</tr>
+</thead>
+</table>
+
+<h4>Example 3: </h4>
+<table>
+<thead>
+<tr>
+<td style="text-align: center">Baseline</td>
+<td><img src="./audio/M2L/314_base.png" width="60%" height="10px"></td>
+</tr>
+<tr>
+<td style="text-align: center">SongMASS</td>
+<td><img src="./audio/M2L/314.png" width="60%" height="10px"></td>
+</tr>
+</thead>
+</table>
 
 <span id="attention_vis" name="Attention visualization"></span>
 <h2 id="attention_vis">Attention visualization</h2>
@@ -55,29 +149,6 @@
 </table>
 
 
-<span id="L2M" name="Lyric-to-melody generation"></span>
-<h2 id="L2M">Lyric-to-melody generation</h2>
-
-<h3>Example 1: </h3>
-
-<table>
-<thead>
-<tr>
-<td style="text-align: center">Baseline</td>
-<td><img src="./audio/L2M/10_base.png" width="60%" height="10px"></td>
-</tr>
-<tr>
-<td style="text-align: center">SongMASS</td>
-<td><img src="./audio/L2M/10.png" width="60%" height="10px"></td>
-</tr>
-</thead>
-</table>
-
-<span id="M2L" name="Melody-to-lyric generation"></span>
-<h2 id="M2L">Melody-to-lyric generation</h2>
-   
-<h3>Example 1 (melody): </h3>   
-<audio controls="controls"><source src="./audio/M2L/168.mp3" autoplay="">Your browser does not support the audio element.</audio>
 </section>
 </article>
 </main>
