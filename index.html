@@ -19,7 +19,7 @@
 </header>
 <main role="main">
 <article itemscope itemtype="https://schema.org/BlogPosting">
-<h1 class="entry-title" itemprop="headline">Automatic Song Writing with Pre-training and Alignment Constraint</h1>
+<h1 class="entry-title" itemprop="headline">SongMASS: Automatic Song Writing with Masked Sequence to Sequence Pre-training</h1>
 <section itemprop="entry-text">
 <br>
 
@@ -29,11 +29,11 @@
 
 <h2 id="abstract">Abstract</h2>
 <p>Automatic song writing aims to compose a song (lyric and/or melody) by machine, which is an interesting topic in both academia and industry. 
-   In automatic song writing, lyric-to-melody generation and melody-to-lyric generation are two important tasks, both of which usually suffer from the following challenges: 1) the paired lyric and melody data are limited, which affects the generation quality of the two tasks, considering a lot of paired training data are needed due to the weak correlation between lyric and melody; 2) Strict alignments are required between lyric and melody, which relies on specific alignment modeling. 
+   In automatic song writing, lyric-to-melody generation and melody-to-lyric generation are two important tasks, both of which usually suffer from the following challenges: 1) the paired lyric and melody data are limited, which affects the generation quality of the two tasks; 2) Strict alignments are required between lyric and melody, which relies on specific alignment modeling. 
    In this paper, we propose SongMASS to address the above challenges, which leverages masked sequence to sequence (MASS) pre-training and attention based alignment modeling for lyric-to-melody and melody-to-lyric generation. 
    Specifically, 1) we extend the original sentence-level MASS pre-training to song level to better capture long contextual information in music, and use a separate encoder and decoder for each modality (lyric or melody);  2) we leverage sentence-level attention mask and token-level attention constraint during training to enhance the alignment between lyric and melody. 
-   During inference, we use a dynamic programming strategy to obtain the alignment between each word/syllable in lyric and note in melody. We pre-train SongMASS on unpaired lyric and melody datasets, and both objective and subjective evaluations demonstrate that SongMASS generates lyric and melody with significantly better quality than the baseline method without pre-training or alignment constraint. 
-   Our code and demos are attached in the supplemental material.</p>
+   During inference, we use a dynamic programming strategy to deliver the alignment between each note in melody and word in lyric.  
+   We pre-train SongMASS on large-scale lyric and melody datasets, and both objective and subjective evaluations demonstrate that SongMASS generates lyric and melody with significantly better quality than the baseline method without pre-training or alignment modeling. </p>
 
 <h2 id="abstract">Contents</h2>
 <b><a href="#L2M">Lyric-to-melody generation</a></b><br>
@@ -49,11 +49,13 @@
 <thead>
 <tr>
 <td style="text-align: center">Baseline</td>
-<td><img src="./audio/L2M/10_base.png" width="60%" height="10px"></td>
+<td><img src="./audio/L2M/10_base.png" width="100%" height="10px"></td>
+<td><audio controls="controls"><source src="./audio/L2M/10_base.mp3" autoplay="">Your browser does not support the audio element.</audio></td>
 </tr>
 <tr>
 <td style="text-align: center">SongMASS</td>
-<td><img src="./audio/L2M/10.png" width="60%" height="10px"></td>
+<td><img src="./audio/L2M/10.png" width="100%" height="10px"></td>
+<td><audio controls="controls"><source src="./audio/L2M/10.mp3" autoplay="">Your browser does not support the audio element.</audio></td>
 </tr>
 </thead>
 </table>
@@ -64,11 +66,13 @@
 <thead>
 <tr>
 <td style="text-align: center">Baseline</td>
-<td><img src="./audio/L2M/88_base.png" width="60%" height="10px"></td>
+<td><img src="./audio/L2M/88_base.png" width="100%" height="10px"></td>
+<td><audio controls="controls"><source src="./audio/L2M/88_base.mp3" autoplay="">Your browser does not support the audio element.</audio></td>
 </tr>
 <tr>
 <td style="text-align: center">SongMASS</td>
-<td><img src="./audio/L2M/88.png" width="60%" height="10px"></td>
+<td><img src="./audio/L2M/88.png" width="100%" height="10px"></td>
+<td><audio controls="controls"><source src="./audio/L2M/88.mp3" autoplay="">Your browser does not support the audio element.</audio></td>
 </tr>
 </thead>
 </table>
@@ -79,11 +83,13 @@
 <thead>
 <tr>
 <td style="text-align: center">Baseline</td>
-<td><img src="./audio/L2M/333_base.png" width="60%" height="10px"></td>
+<td><img src="./audio/L2M/333_base.png" width="100%" height="10px"></td>
+<td><audio controls="controls"><source src="./audio/L2M/333_base.mp3" autoplay="">Your browser does not support the audio element.</audio></td>
 </tr>
 <tr>
 <td style="text-align: center">SongMASS</td>
-<td><img src="./audio/L2M/333.png" width="60%" height="10px"></td>
+<td><img src="./audio/L2M/333.png" width="100%" height="10px"></td>
+<td><audio controls="controls"><source src="./audio/L2M/333.mp3" autoplay="">Your browser does not support the audio element.</audio></td>
 </tr>
 </thead>
 </table>
@@ -93,6 +99,7 @@
 <h2 id="M2L">Melody-to-lyric generation</h2>
    
 <h4>Example 1: </h4>
+<audio controls="controls"><source src="./audio/M2L/240.mp3" autoplay="">Your browser does not support the audio element.</audio>
 <table>
 <thead>
 <tr>
@@ -107,6 +114,7 @@
 </table>
 
 <h4>Example 2: </h4>
+<audio controls="controls"><source src="./audio/M2L/314.mp3" autoplay="">Your browser does not support the audio element.</audio>
 <table>
 <thead>
 <tr>
@@ -121,6 +129,7 @@
 </table>
 
 <h4>Example 3: </h4>
+<audio controls="controls"><source src="./audio/M2L/385.mp3" autoplay="">Your browser does not support the audio element.</audio>
 <table>
 <thead>
 <tr>
